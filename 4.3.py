@@ -1,0 +1,32 @@
+from tkinter import *
+from tkinter import messagebox
+master = Tk()
+master.title('tk')
+Label(master, text='Empid').grid(row=0)
+Label(master, text='Employee Name').grid(row=1)
+Label(master, text='Job').grid(row=2)
+Label(master, text='Employee Type').grid(row=3)
+Label(master, text='Salary').grid(row=4)
+e1 = Entry(master)
+e2 = Entry(master)
+e3 = Entry(master)
+# e4 = Entry(master)
+e1.grid(row=0, column=1)
+e2.grid(row=1, column=1)
+e3.grid(row=2, column=1)
+# e4.grid(row=4, column=1)
+var1 = IntVar()
+Radiobutton(master, text="Regular", variable=var1).grid(row=3, column=1, sticky=W)
+var2 = IntVar()
+Radiobutton(master, text="Temporary", variable=var2).grid(row=3, column=2, sticky=W)
+
+# def slide():
+#     msg = messagebox.showinfo( "SpinBox Event Demo",spin.get()) 
+spin = Spinbox(master, from_= 0, to = 25)
+spin.grid(row=4,column=1)
+
+btn = Button(master, text='Insert').grid(row=5)
+btn = Button(master, text='Update').grid(row=5, column=1)
+btn = Button(master, text='Delete').grid(row=6)
+btn = Button(master, text='Select').grid(row=6, column=1)
+mainloop()
